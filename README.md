@@ -12,3 +12,11 @@ HEXERP is a modular Enterprise Resource Planning (ERP) platform designed for UK 
    ```bash
    uvicorn erp.main:app --reload
    ```
+
+## Deploying to Vercel
+
+Vercel looks for serverless functions in the `api` directory. This repository
+provides `api/index.py` which simply exports the FastAPI app so it can run as a
+serverless function. A minimal `vercel.json` is included to set the function's
+runtime options. After pushing the code to a Vercel-connected repository, the
+application will be served from `/api` and you should no longer see a 404 page.
